@@ -1,0 +1,69 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 17 ago 2026, 11:52:41
+    Author     : informatica
+*/
+
+.etiqueta{
+    -fx-font-size: 16px;
+
+}
+
+.campo{
+    -fx-border-color: black;
+    -fx-border-width: 3px;
+    -fx-background-color: white;
+    -fx-text-fill: black;
+
+}
+
+.error-campo{
+    -fx-border-color: red;
+    -fx-border-width: 7px;
+    -fx-text-fill: #990000;
+    -fx-border-radius: 6px;
+
+}
+
+.link{
+    -fx-font-size: 15px;
+    -fx-font-family: "IMPACT";
+    -fx-text-fill: #FF7F27;
+
+}
+
+.link:hover{
+    -fx-text-fill: #0f0;
+
+}
+
+.link:pressed{
+    -fx-text-fill: f00;
+}
+
+#btn-login{
+    -fx-background-color: black;
+    -fx-border-color: #0036aa;
+    -fx-text-fill: white;
+    -fx-font-size: 19px;
+    -fx-font-weight: bold;
+    -fx-border-radius : 8px;
+    -fx-background-radius: 10px;
+
+}
+
+#btn-login:hover{
+    -fx-background-color: #319ea7;
+    -fx-border-color: #2f367c;
+
+}
+
+#bnt-login:pressed{
+    -fx-background-color: black;
+    -fx-border-color: #2f3c92;
+    -fx-cursor: grab;
+}
+

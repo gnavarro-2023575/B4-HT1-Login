@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.germannavarro.system.controller.LoginController">
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+   <children>
+      <VBox alignment="CENTER" prefHeight="470.0" prefWidth="100.0" spacing="15.0" stylesheets="@../resources/styles/LoginStyles.css">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/images/user-red.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="25.0" prefWidth="369.0" styleClass="etiqueta" text="Usurio/Correo" />
+            <TextField fx:id="txtUsuario" styleClass="campo" />
+            <Label prefHeight="31.0" prefWidth="370.0" styleClass="etiqueta" text="Contraseña" />
+            <PasswordField fx:id="pwdPasscode" prefHeight="22.0" prefWidth="370.0" styleClass="campo" />
+            <HBox alignment="CENTER" prefHeight="23.0" prefWidth="65.0">
+               <children>
+                  <Hyperlink fx:id="linkRegistro" onAction="#irARegistro" prefHeight="23.0" prefWidth="167.0" styleClass="link" text="¿Tienes Cuenta? REGISTRATE" textAlignment="CENTER" />
+               </children>
+            </HBox>
+            <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="25.0" prefWidth="105.0" stylesheets="@../resources/styles/LoginStyles.css" text="INICIAR SESION" />
+         </children>
+      </VBox>
+   </children>
+</VBox>
