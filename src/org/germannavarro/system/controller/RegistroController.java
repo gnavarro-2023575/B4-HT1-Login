@@ -12,10 +12,11 @@ import javafx.scene.control.TextField;
 import org.germannavarro.system.service.UserService;
 import org.germannavarro.system.utils.AlertInformation;
 import org.germannavarro.system.utils.SceneManager;
+import org.germannavarro.system.utils.Validations;
 import org.germannavarro.system.utils.ViewFactory;
 
 public class RegistroController implements Initializable {
-    
+
     private ViewFactory viewFactory = new ViewFactory();
 
     @FXML
@@ -56,6 +57,37 @@ public class RegistroController implements Initializable {
             return;
         }
 
+        if (!Validations.validateLenghtText(nombre, 50)) {
+            alert.mostrarAlerta("error", "Nombre muy largo", "El nombre no puede exceder 50 caracteres.");
+            return;
+        }
+
+        if (!Validations.validateLenghtText(apellido, 50)) {
+            alert.mostrarAlerta("error", "Apellido muy largo", "El apellido no puede exceder 50 caracteres.");
+            return;
+        }
+
+        if (!Validations.validateLenghtText(email, 50)) {
+            alert.mostrarAlerta("error", "Email muy largo", "El email no puede exceder 50 caracteres.");
+            return;
+        }
+
+        //Validacion del email: caracteres
+        if (!Validations.validateEmail(email)) {
+            alert.mostrarAlerta("error", "Email mal ingresado", "El email debe de contener los caracteres: @, . ");
+            return;
+        }
+
+        if (!Validations.validateLenghtText(user, 25)) {
+            alert.mostrarAlerta("error", "User muy largo", "El user no puede exceder 25 caracteres.");
+            return;
+        }
+
+        if (!Validations.validateLenghtText(password, 35)) {
+            alert.mostrarAlerta("error", "Password muy largo", "El password no puede exceder 35 caracteres.");
+            return;
+        }
+
         boolean exito = userService.registrarUsuario(nombre, apellido, email, user, password);
 
         if (exito) {
@@ -65,6 +97,7 @@ public class RegistroController implements Initializable {
         } else {
             alert.mostrarAlerta("error", "Error de Registro", "No se pudo registrar el usuario en la base de datos.");
         }
+
     }
 
     @FXML
