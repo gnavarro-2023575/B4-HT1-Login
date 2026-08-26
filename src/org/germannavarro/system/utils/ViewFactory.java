@@ -39,6 +39,24 @@ public class ViewFactory {
         }
     }
 
+    public FXMLLoader LoadFXML(String nameFXML) {
+        String pathOffFile = PATH_VIEWS + nameFXML;
+
+        FXMLLoader loaderFXML = new FXMLLoader();
+
+        URL urFile = ClasePrincipal.class.getResource(pathOffFile);
+
+        loaderFXML.setBuilderFactory(new JavaFXBuilderFactory());
+
+        loaderFXML.setLocation(urFile);
+        try {
+            loaderFXML.load();
+            return loaderFXML;
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
+    }
+
     public void loadScene(String nameFXML) {
         Scene scene = null;
         try {
@@ -68,8 +86,8 @@ public class ViewFactory {
     public void viewLogin() {
         loadScene("login");
     }
-    
-    public void viewRegistro(){
+
+    public void viewRegistro() {
         loadScene("registro");
     }
 }

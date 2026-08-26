@@ -1,3 +1,6 @@
+package org.germannavarro.system.controller;
+
+import org.germannavarro.system.model.User;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import org.germannavarro.system.model.User;
 
 /**
  * Controlador de la vista principal (MainMenuView.fxml).
@@ -35,6 +39,8 @@ public class MainMenuController implements Initializable {
 
     @FXML
     private StackPane contentArea;
+
+    private User usuarioActual;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -61,8 +67,8 @@ public class MainMenuController implements Initializable {
     }
 
     /**
-     * ACCIÓN CRÍTICA: Cerrar Sesión
-     * Destruye/reemplaza la escena actual y regresa al LoginView.fxml.
+     * ACCIÓN CRÍTICA: Cerrar Sesión Destruye/reemplaza la escena actual y
+     * regresa al LoginView.fxml.
      */
     @FXML
     private void handleCerrarSesion(ActionEvent event) {
@@ -90,7 +96,8 @@ public class MainMenuController implements Initializable {
     }
 
     /**
-     * Método auxiliar para cargar vistas dinámicas dentro del contenedor central.
+     * Método auxiliar para cargar vistas dinámicas dentro del contenedor
+     * central.
      */
     private void cargarVista(String fxmlPath) {
         try {
@@ -101,5 +108,12 @@ public class MainMenuController implements Initializable {
             System.err.println("Error al cargar la vista central: " + fxmlPath);
             e.printStackTrace();
         }
+    }
+
+    public void recibirUsuario(User usuario) {
+        usuarioActual = usuario;
+
+        lblUsuario.setText(usuarioActual.getNombre() + " " + usuarioActual.getApellido());
+
     }
 }
