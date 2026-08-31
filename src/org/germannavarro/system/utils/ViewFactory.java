@@ -97,4 +97,35 @@ public class ViewFactory {
     public void viewRegistro() {
         loadScene("registro");
     }
+
+    /**
+     * Carga el Menu Principal y le entrega el usuario que inicio sesion, para
+     * que el controlador pueda mostrar su nombre en pantalla.
+     *
+     * @param usuario usuario autenticado
+     */
+    public void viewMenu(User usuario) {
+        try {
+            String pathOffFile = PATH_VIEWS + "MainMenuView.fxml";
+
+            FXMLLoader loaderFXML = new FXMLLoader();
+            URL urFile = ClasePrincipal.class.getResource(pathOffFile);
+            loaderFXML.setBuilderFactory(new JavaFXBuilderFactory());
+            loaderFXML.setLocation(urFile);
+
+            Scene scene = new Scene(loaderFXML.load(), 750, 500);
+
+            // Esto es lo clave: obtenemos el controlador YA CREADO por el loader,
+            // y le pasamos el usuario para que pueda mostrar su nombre.
+            MainMenuController controlador = loaderFXML.getController();
+            controlador.recibirUsuario(usuario);
+
+            SceneManager.getInstanciaScenerManager().getStagePrincipal().setTitle("MENU PRINCIPAL");
+            SceneManager.getInstanciaScenerManager().getStagePrincipal().setResizable(true);
+            SceneManager.getInstanciaScenerManager().changeScene(scene);
+
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
+    }
 }

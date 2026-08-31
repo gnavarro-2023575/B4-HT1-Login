@@ -43,11 +43,11 @@ create table Users(
     
     Delimiter $$
 		CREATE PROCEDURE sp_search_user(IN user_p varchar(25))
-        BEGIN
-			SELECT id_user, `user`, password
-            FROM Users
-            WHERE `user` = user_p;
-        END $$
-    Delimiter  ;
+	BEGIN
+		SELECT id_user, `user`, password, name, lastname
+		FROM Users
+		WHERE `user` = user_p;
+	END $$
+	Delimiter  ;
     
     CALL sp_search_user('cmendoza');

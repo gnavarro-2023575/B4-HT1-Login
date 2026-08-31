@@ -83,7 +83,7 @@ public class MainMenuController implements Initializable {
      */
     private void mostrarContenido(String titulo, String mensaje) {
         Label lblTitulo = new Label(titulo);
-        lblTitulo.getStyleClass().add("contenido-titulo");
+        lblTitulo.getStyleClass().add("Menu Principal");
 
         Label lblMensaje = new Label(mensaje);
         lblMensaje.setWrapText(true);

@@ -35,7 +35,7 @@ public class LoginController {
 
     private AlertInformation alert = new AlertInformation();
     private UserService service = new UserService();
-    
+
     private ViewFactory viewFactory = new ViewFactory();
 
     @FXML
@@ -49,10 +49,11 @@ public class LoginController {
             if (usuarioEncontrado == null) {
                 alert.mostrarAlerta("warning", "ADVERTENCIA", "CREDENCIALES INVALIDAS");
 
-            } else {
-                alert.mostrarAlerta("confirm", "Inicio de sesion exitoso", "LOGIN");
-
             }
+        } else {
+            alert.mostrarAlerta("confirm", "Inicio de sesion exitoso", "LOGIN");
+            viewFactory.viewMenu(usuarioEncontrado);   // <-- esta linea navega al menu
+
         }
     }
 
@@ -73,9 +74,9 @@ public class LoginController {
         }
         return true;
     }
-    
+
     @FXML
-    private void irARegistro (ActionEvent evento){
+    private void irARegistro(ActionEvent evento) {
         viewFactory.viewRegistro();
     }
 
