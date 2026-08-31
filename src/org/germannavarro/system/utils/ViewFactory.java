@@ -11,6 +11,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Scene;
 import org.germannavarro.system.ClasePrincipal;
+import org.germannavarro.system.controller.MainMenuController;
+import org.germannavarro.system.model.User;
 
 /**
  *
@@ -70,6 +72,11 @@ public class ViewFactory {
                     SceneManager.getInstanciaScenerManager().getStagePrincipal().setTitle("REGISTRO DE USUARIO");
                     SceneManager.getInstanciaScenerManager().getStagePrincipal().setResizable(false);
                     scene = LoadFileFXML("RegistroView.fxml", 420, 550);
+                }
+                case "menu" -> {
+                    SceneManager.getInstanciaScenerManager().getStagePrincipal().setTitle("MENU PRINCIPAL");
+                    SceneManager.getInstanciaScenerManager().getStagePrincipal().setResizable(true);
+                    scene = LoadFileFXML("MainMenuView.fxml", 750, 500);
                 }
                 default ->
                     scene = LoadFileFXML("LoginView.fxml", 400, 500);

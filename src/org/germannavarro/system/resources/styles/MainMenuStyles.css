@@ -1,0 +1,73 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 31/08/2026, 17:20:56
+    Author     : RM20
+*/
+
+/*
+    Estilos del Menu Principal (MainMenuView.fxml)
+    Usa la misma paleta de colores que LoginStyles.css
+    (negro, azul #0036aa, naranja #FF7F27)
+*/
+
+.sidebar {
+    -fx-background-color: black;
+}
+
+.titulo-menu {
+    -fx-font-size: 18px;
+    -fx-font-family: "IMPACT";
+    -fx-text-fill: #FF7F27;
+    -fx-text-alignment: center;
+}
+
+.etiqueta-usuario {
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-padding: 10 0 0 0;
+    -fx-text-alignment: center;
+}
+
+.btn-menu {
+    -fx-background-color: #1c1c1c;
+    -fx-border-color: #0036aa;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+}
+
+.btn-menu:hover {
+    -fx-background-color: #319ea7;
+    -fx-border-color: #2f367c;
+}
+
+.btn-cerrar-sesion {
+    -fx-background-color: #990000;
+    -fx-border-color: #660000;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+}
+
+.btn-cerrar-sesion:hover {
+    -fx-background-color: #cc0000;
+}
+
+.content-area {
+    -fx-background-color: white;
+}
+
+.contenido-titulo {
+    -fx-font-size: 22px;
+    -fx-font-family: "IMPACT";
+    -fx-text-fill: #0036aa;
+}
