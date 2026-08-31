@@ -49,11 +49,11 @@ public class LoginController {
             if (usuarioEncontrado == null) {
                 alert.mostrarAlerta("warning", "ADVERTENCIA", "CREDENCIALES INVALIDAS");
 
-            }
-        } else {
-            alert.mostrarAlerta("confirm", "Inicio de sesion exitoso", "LOGIN");
-            viewFactory.viewMenu(usuarioEncontrado);   // <-- esta linea navega al menu
+            } else {
+                alert.mostrarAlerta("confirm", "Inicio de sesion exitoso", "LOGIN");
+                viewFactory.viewMenu(usuarioEncontrado);   // <-- navega al menu, DENTRO del else
 
+            }
         }
     }
 
